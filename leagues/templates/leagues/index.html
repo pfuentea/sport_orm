@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+{% extends './base.html' %}
+{% block content %}
+<!--
+	<!DOCTYPE html>
 <html>
 	<head>
 		<title>Sports Leagues</title>
@@ -30,3 +33,130 @@
 		</ol>
 	</body>
 </html>
+!-->
+
+
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+		<h2 class="accordion-header" id="headingOne">
+			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				Todas las ligas de béisbol
+			</button>
+		</h2>
+		<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Ligas de Baseball</strong>
+				<ul>
+					{% for ligas in baseball_liga %}
+						<li>{{ligas.name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+    <div class="accordion-item">
+		<h2 class="accordion-header" id="headingTwo">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				Todas las ligas de mujeres
+			</button>
+		</h2>
+		<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Ligas de Mujeres</strong>
+				<ul>
+					{% for ligas in ligas_femeninas %}
+						<li>{{ligas.name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+    <div class="accordion-item">
+		<h2 class="accordion-header" id="headingThree">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				Todas las ligas donde el deporte es cualquier tipo de hockey
+			</button>
+		</h2>
+		<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Ligas de Hockey</strong>
+				<ul>
+					{% for ligas in ligas_hockey %}
+						<li>{{ligas.name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingFour">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+				Todas las ligas donde el deporte no sea football
+			</button>
+		</h2>
+		<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Ligas no-futbol</strong>
+				<ul>
+					{% for ligas in ligas_no_futbol %}
+						<li>{{ligas.name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingFive">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+				Todas las ligas que se llaman "conferencias"
+			</button>
+		</h2>
+		<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Ligas "conferencia"</strong>
+				<ul>
+					{% for ligas in ligas_conferencia %}
+						<li>{{ligas.name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingSix">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+				Todas las ligas de la región atlántica
+			</button>
+		</h2>
+		<div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Ligas Atlantica</strong>
+				<ul>
+					{% for ligas in ligas_atlantica %}
+						<li>{{ligas.name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingSeven">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+				Todos los equipos con sede en Dallas
+			</button>
+		</h2>
+		<div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Ligas de Dallas</strong>
+				<ul>
+					{% for ligas in ligas_dallas %}
+						<li>{{ligas.name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+</div>
+
+{% endblock %}
