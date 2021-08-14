@@ -157,6 +157,159 @@
 			</div>
 		</div>
     </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingEigth">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEigth" aria-expanded="false" aria-controls="collapseEigth">
+				Todos los equipos nombraron los Raptors
+			</button>
+		</h2>
+		<div id="collapseEigth" class="accordion-collapse collapse" aria-labelledby="headingEigth" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Raptors</strong>
+				<ul>
+					{% for team in teams_raptors %}
+						<li>{{team.location}} {{team.team_name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingNine">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+				Todos los equipos cuya ubicación incluye "Ciudad"
+			</button>
+		</h2>
+		<div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Team con "ciudad"</strong>
+				<ul>
+					{% for team in teams_city %}
+						<li>{{team.location}} {{team.team_name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingTen">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+				Todos los equipos cuyos nombres comienzan con "T"
+			</button>
+		</h2>
+		<div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Team con "T" inicial</strong>
+				<ul>
+					{% for team in teams_t %}
+						<li>{{team.location}} {{team.team_name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingEleven">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+				11.-Todos los equipos, ordenados alfabéticamente por ubicación
+			</button>
+		</h2>
+		<div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Team Ordenados location</strong>
+				<ul>
+					{% for team in teams_order_location %}
+						<li>{{team.location}} {{team.team_name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingTwelve">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+				12.-Todos los equipos, ordenados por nombre de equipo en orden alfabético inverso
+			</button>
+		</h2>
+		<div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Team ordenados inverso</strong>
+				<ul>
+					{% for team in teams_order_team_inv %}
+						<li>{{team.location}} {{team.team_name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingTrece">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTrece" aria-expanded="false" aria-controls="collapseTrece">
+				13.-Cada jugador con apellido "Cooper"
+			</button>
+		</h2>
+		<div id="collapseTrece" class="accordion-collapse collapse" aria-labelledby="headingTrece" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Cooper</strong>
+				<ul>
+					{% for player in jugadores_cooper %}
+						<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingCatorce">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCatorce" aria-expanded="false" aria-controls="collapseCatorce">
+				14.- Cada jugador con nombre "Joshua"
+			</button>
+		</h2>
+		<div id="collapseCatorce" class="accordion-collapse collapse" aria-labelledby="headingCatorce" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Jugadores Joshua</strong>
+				<ul>
+					{% for player in jugadores_joshua %}
+						<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingQuince">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuince" aria-expanded="false" aria-controls="collapseQuince">
+				15.- todos los jugadores con el apellido "Cooper" EXCEPTO aquellos con "Joshua" como primer nombre
+			</button>
+		</h2>
+		<div id="collapseQuince" class="accordion-collapse collapse" aria-labelledby="headingQuince" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Coopers sin Joshua</strong>
+				<ul>
+					{% for player in jugadores_cooper_joshua %}
+						<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingDieciseis">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDieciseis" aria-expanded="false" aria-controls="collapseDieciseis">
+				16.- Todos los jugadores con nombre "Alexander" O nombre "Wyatt"
+			</button>
+		</h2>
+		<div id="collapseDieciseis" class="accordion-collapse collapse" aria-labelledby="headingDieciseis" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<strong>Wyatt o Alexander</strong>
+				<ul>
+					{% for player in jugadores_alex_wyatt %}
+						<li>{{player.first_name}} {{player.last_name}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    </div>
 </div>
 
 {% endblock %}
